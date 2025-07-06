@@ -7,11 +7,13 @@ import NoteDetail from "./pages/NoteDetail";
 function App() {
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/create" element={<CreateNote />} />
-        <Route path="/note/:id" element={<NoteDetail />} />
-      </Routes>
+      <div data-theme="luxury">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/create" element={<CreateNote />} />
+          <Route path="/note/:id" element={<NoteDetail />} />
+        </Routes>
+      </div>
     </>
   );
 }
