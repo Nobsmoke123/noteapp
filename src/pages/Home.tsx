@@ -4,6 +4,7 @@ import RateLimiter from "../components/RateLimiter";
 import axios from "axios";
 import AuthContext from "../components/AuthContext";
 import { useNavigate } from "react-router";
+import NoteCard from "../components/NoteCard";
 
 export interface Note {
   content: string;
@@ -57,15 +58,16 @@ const Home = () => {
         <Navbar />
         {isRateLimited && <RateLimiter />}
 
-        <div className="max-w-7xl mx-auto p-4 mt-6">
+        <div className="max-w-screen mx-auto p-8 mt-6">
           {isLoading && (
             <span className="loading loading-spinner loading-xl"></span>
           )}
-
-          {notes.length > 0 &&
-            notes.map((note: Note, index: number) => (
-              <div key={index}>{note.content}</div>
-            ))}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-20">
+            {notes.length > 0 &&
+              notes.map((note: Note, index: number) => (
+                <NoteCard key={index} note={note} />
+              ))}
+          </div>
         </div>
       </div>
     </>

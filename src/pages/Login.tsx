@@ -1,5 +1,5 @@
 import { EyeIcon, EyeOff } from "lucide-react";
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import axios from "axios";
 import AuthContext from "../components/AuthContext";
 import toast from "react-hot-toast";
@@ -14,7 +14,7 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const { authData, setAuthData } = useContext(AuthContext);
+  const { setAuthData } = useContext(AuthContext);
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -55,13 +55,6 @@ const Login = () => {
     setIsLoading(false);
   };
 
-  useEffect(() => {
-    console.log("The authData is:");
-    console.log(authData);
-    if (authData.isLoggedIn) {
-      navigate("/notes");
-    }
-  }, []);
   return (
     <div className="w-screen min-h-screen flex flex-col items-center justify-center">
       <div className="flex flex-col items-center justify-center border-2 border-neutral rounded-xl bg-neutral w-[500px] h-[500px] px-4">
