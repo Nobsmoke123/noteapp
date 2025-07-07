@@ -10,7 +10,9 @@ const NoteCard = ({ note }: { note: Note }) => {
       className="card bg-base-100 hover:shadow-lg transition-all  duration-200 border-2 border-solid border-tertiary w-[340px]"
     >
       <div className="card-body">
-        <h4 className="card-title text-base-200">#{note.id}</h4>
+        <h4 className="card-title text-tertiary-100 tracking-tighter">
+          #{note.id}
+        </h4>
         <p>{note.content.substring(0, 500)}...</p>
         <div className="card-actions flex justify-between">
           <span>{formatDate(note.createdAt)}</span>
