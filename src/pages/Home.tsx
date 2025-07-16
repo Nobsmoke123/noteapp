@@ -62,7 +62,7 @@ const Home = () => {
           {isLoading && (
             <span className="loading loading-spinner loading-xl"></span>
           )}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-20">
+          <div className=" p-2 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-10">
             {notes.length > 0 &&
               notes.map((note: Note, index: number) => (
                 <NoteCard key={index} note={note} />

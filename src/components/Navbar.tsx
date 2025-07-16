@@ -13,6 +13,10 @@ const Navbar = () => {
             <Link to={"/create"} className="btn btn-primary">
               <PlusIcon className="size-5" /> Add Note
             </Link>
+
+            <Link to={"/create"} className="btn btn-primary">
+              <PlusIcon className="size-5" /> Add Tag
+            </Link>
           </div>
         </div>
       </div>
